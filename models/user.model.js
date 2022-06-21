@@ -23,7 +23,7 @@ const userSchema = new Schema(
       required: [true, "Password is required"],
       match: [passwordRgx, "Invalid password"],
     },
-    list: {
+    lists: {
       type: [
         {
           type: Schema.Types.ObjectId,

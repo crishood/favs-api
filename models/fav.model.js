@@ -1,4 +1,4 @@
-const { Schema, model, models } = require("moongose");
+const { Schema, model, models } = require("mongoose");
 
 const favSchema = new Schema(
   {
@@ -14,8 +14,17 @@ const favSchema = new Schema(
       type: String,
       required: true,
     },
+    list: {
+      type: Schema.Types.ObjectId,
+      ref: "List",
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
+
+const Fav = model("Fav", favSchema);
+
+module.exports = Fav;
