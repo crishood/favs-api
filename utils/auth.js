@@ -14,7 +14,7 @@ exports.auth = (req, res, next) => {
       throw new Error("Session expired");
     }
 
-    const { id } = jwt.verify(token, process.env.SECRET);
+    const { id } = jwt.verify(token, process.env.ORION);
 
     req.user = id;
 

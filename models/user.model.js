@@ -1,4 +1,4 @@
-const { Schema, model, models } = require("moongose");
+const { Schema, model, models } = require("mongoose");
 const emailRgx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const passwordRgx = new RegExp("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}");
 
@@ -20,6 +20,7 @@ const userSchema = new Schema(
       ],
     },
     password: {
+      type: String,
       required: [true, "Password is required"],
       match: [passwordRgx, "Invalid password"],
     },
