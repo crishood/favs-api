@@ -17,9 +17,8 @@ describe("user", () => {
   });
 
   it("Should create a user correctly", async () => {
-    const user = { email: "camilelamb@test.com", password: "12345Abcz" };
+    const user = { email: "test@test.com", password: "12345678Az" };
     const res = await clonServer(app).post("/users/register").send(user);
-
     expect(res.statusCode).toBe(200);
     expect(res.body.data).toHaveProperty("token");
     expect(res.body.data.token).toMatch(

@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const userRouter = require("./routes/users");
 const listRouter = require("./routes/lists");
 const favRouter = require("./routes/favs");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
